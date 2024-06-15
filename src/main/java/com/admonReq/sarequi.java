@@ -1,6 +1,6 @@
 package com.admonReq;
 
-import com.admonReq.views.SesionVew;
+import com.admonReq.views.SesionView;
 import com.admonReq.views.OtraVistaView;
 import com.admonReq.views.InicioView;
 import com.gluonhq.charm.glisten.application.AppManager;
@@ -22,7 +22,7 @@ public class sarequi extends Application {
 
     @Override
     public void init() {
-        appManager.addViewFactory(SESION_VIEW, () -> new SesionVew().getView());
+        appManager.addViewFactory(SESION_VIEW, () -> new SesionView().getView());
         appManager.addViewFactory(OTRAVISTA_VIEW, () -> new OtraVistaView().getView());
         appManager.addViewFactory(INICIO_VIEW, () -> new InicioView().getView());
 
@@ -44,7 +44,7 @@ public class sarequi extends Application {
         ((Stage) scene.getWindow()).getIcons().add(new Image(sarequi.class.getResourceAsStream("/icon.png")));
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         launch(args);
     }
 }

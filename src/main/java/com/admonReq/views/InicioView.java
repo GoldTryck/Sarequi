@@ -9,7 +9,7 @@ import javafx.fxml.FXMLLoader;
 public class InicioView {
     public View getView() {
         try {
-            return FXMLLoader.load(Objects.requireNonNull(InicioView.class.getResource("InicioSesion.fxml")));
+            return FXMLLoader.load(Objects.requireNonNull(InicioView.class.getResource("inicio.fxml")));
         } catch (IOException e) {
             System.out.println("IOException: " + e);
             return new View();

@@ -16,7 +16,6 @@
         <gluonfx.plugin.version>1.0.22</gluonfx.plugin.version>
         <javafx.plugin.version>0.0.8</javafx.plugin.version>
         <mainClassName>com.admonReq.sarequi</mainClassName>
-        <gluonfx.target>desktop</gluonfx.target>
     </properties>
 
     <dependencies>
@@ -70,7 +69,40 @@
     </repositories>
 
     <build>
+
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <filters>
+                                <filter>
+                                    <!-- Ejemplo de exclusión de archivos -->
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/substrate/config/**</exclude>
+                                        <!-- Aquí puedes añadir más exclusiones si es necesario -->
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <Main-Class>com.admonReq.Main</Main-Class>
+                                    </manifestEntries>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -91,7 +123,7 @@
                 <artifactId>gluonfx-maven-plugin</artifactId>
                 <version>${gluonfx.plugin.version}</version>
                 <configuration>
-                    <target>${gluonfx.target}</target>
+                    <target>macos</target>
                     <attachList>
                         <list>display</list>
                         <list>lifecycle</list>
@@ -101,8 +133,9 @@
                     <reflectionList>
                         <list>com.admonReq.views.InicioPresenter</list>
                         <list>com.admonReq.views.OtraVistaPresenter</list>
+                        <list>com.admonReq.views.SesionPresenter</list>
                     </reflectionList>
-                    <mainClass>${mainClassName}</mainClass>
+                    <mainClass>com.admonReq.sarequi</mainClass>
                 </configuration>
             </plugin>
         </plugins>
@@ -110,9 +143,9 @@
 
     <profiles>
         <profile>
-            <id>ios</id>
+            <id>macos</id>
             <properties>
-                <gluonfx.target>ios</gluonfx.target>
+                <gluonfx.target>macos</gluonfx.target>
             </properties>
         </profile>
         <profile>
