@@ -1,37 +1,245 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.DropdownButton?>
-<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import com.gluonhq.charm.glisten.control.CharmListView?>
+<?import com.gluonhq.charm.glisten.control.ExpansionPanel?>
+<?import com.gluonhq.charm.glisten.control.ExpansionPanel.CollapsedPanel?>
+<?import com.gluonhq.charm.glisten.control.ExpansionPanelContainer?>
+<?import com.gluonhq.charm.glisten.control.ProgressBar?>
+<?import com.gluonhq.charm.glisten.control.ProgressIndicator?>
 <?import com.gluonhq.charm.glisten.mvc.View?>
-<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
-<View fx:id="inicio" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@inicio.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admonReq.views.InicioPresenter">
-   <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
+<View fx:id="inicio" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="643.0" stylesheets="@inicio.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admonReq.views.InicioPresenter">
+   <top>
+      <VBox fx:id="description" alignment="TOP_CENTER" prefHeight="654.0" prefWidth="643.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="212.0" prefWidth="350.0">
+            <GridPane prefHeight="591.0" prefWidth="623.0" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="188.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="258.0" minHeight="0.0" prefHeight="165.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="194.0" minHeight="0.0" prefHeight="107.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="323.0" minHeight="1.0" prefHeight="130.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <DropdownButton>
-                      <items>
-                          <MenuItem text="Choice 1" />
-                          <MenuItem text="Choice 2" />
-                          <MenuItem text="Choice 3" />
-                      </items>
-                  </DropdownButton>
+                  <AnchorPane prefHeight="108.0" prefWidth="851.0" GridPane.columnSpan="2147483647">
+                     <children>
+                        <Label alignment="CENTER" layoutX="85.0" layoutY="186.0" styleClass="tittle" text="Proyecto Sarequi" textAlignment="JUSTIFY" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="5.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <TabPane prefHeight="134.0" prefWidth="623.0" rotateGraphic="true" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+                     <tabs>
+                        <Tab text="Descripción">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="173.0" prefWidth="623.0">
+                                 <children>
+                                    <Separator layoutX="4.0" layoutY="98.0" prefHeight="13.0" prefWidth="616.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="98.0" />
+                                    <TextFlow accessibleHelp="Descripcion" accessibleRoleDescription="text-flow" lineSpacing="1.5" prefHeight="105.0" prefWidth="633.0" styleClass="text" textAlignment="JUSTIFY" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="10.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " wrappingWidth="606.0001831054688" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="20.0" right="20.0" />
+                                       </padding>
+                                    </TextFlow>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Estado">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="102.0" prefHeight="40.0" prefWidth="92.0" text="Activo">
+                                       <graphic>
+                                          <ImageView fitHeight="150.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../active-svgrepo-com.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <Separator layoutX="4.0" layoutY="95.0" prefHeight="13.0" prefWidth="616.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="98.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Fecha de inicio">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="189.0" layoutY="5.0" text="01-06-2024" />
+                                    <Separator prefHeight="13.0" prefWidth="616.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="98.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Proximas Fechas">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Separator prefHeight="13.0" prefWidth="616.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="98.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+                  <VBox prefHeight="81.0" prefWidth="332.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="   Seguimiento de Requisito">
+                           <font>
+                              <Font name="Tahoma Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <ExpansionPanelContainer fx:id="expans" prefHeight="62.0" prefWidth="323.0">
+                            <items>
+                                <ExpansionPanel>
+                                    <collapsedContent>
+                                        <ExpansionPanel.CollapsedPanel>
+                                            <titleNodes>
+                                                <Label text="Completados" />
+                                            </titleNodes>
+                                        </ExpansionPanel.CollapsedPanel>
+                                    </collapsedContent>
+                                 <expandedContent>
+                                    <VBox alignment="TOP_CENTER" prefHeight="100.0">
+                                       <children>
+                                          <CharmListView fx:id="compelte" />
+                                       </children>
+                                    </VBox>
+                                 </expandedContent>
+                                </ExpansionPanel>
+                                <ExpansionPanel>
+                                    <collapsedContent>
+                                        <ExpansionPanel.CollapsedPanel>
+                                            <titleNodes>
+                                                <Label text="En progreso" />
+                                            </titleNodes>
+                                        </ExpansionPanel.CollapsedPanel>
+                                    </collapsedContent>
+                                 <expandedContent>
+                                    <VBox prefHeight="100.0">
+                                       <children>
+                                          <CharmListView fx:id="inProg" />
+                                       </children>
+                                    </VBox>
+                                 </expandedContent>
+                                </ExpansionPanel>
+                              <ExpansionPanel>
+                                 <collapsedContent>
+                                    <ExpansionPanel.CollapsedPanel>
+                                       <titleNodes>
+                                          <Label text="Por hacer" />
+                                       </titleNodes>
+                                    </ExpansionPanel.CollapsedPanel>
+                                 </collapsedContent>
+                                 <expandedContent>
+                                    <VBox prefHeight="100.0">
+                                       <children>
+                                          <CharmListView fx:id="toDo" />
+                                       </children>
+                                    </VBox>
+                                 </expandedContent>
+                              </ExpansionPanel>
+                            </items>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </ExpansionPanelContainer>
+                     </children>
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="Progreso">
+                           <font>
+                              <Font name="Tahoma Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <ProgressBar maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="20.0" progress="0.5">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </ProgressBar>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="TOP" text="50%">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="301.0" prefWidth="333.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" prefHeight="301.0" prefWidth="181.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="161.0" spacing="5.0">
+                                 <children>
+                                    <ProgressIndicator progress="0.35" />
+                                    <Label text="Completados: 35%" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="161.0" spacing="5.0">
+                                 <children>
+                                    <ProgressIndicator progress="0.55" />
+                                    <Label text="En Progreso: 55%" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="161.0" spacing="5.0">
+                                 <children>
+                                    <ProgressIndicator progress="0.1" />
+                                    <Label text="Por hacer: 10%" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ImageView fitHeight="150.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../statistics-svgrepo-com.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </HBox>
                </children>
-            </HBox>
-            <Label fx:id="label" text="Hello JavaFX World!" />
-            <Button mnemonicParsing="false" onAction="#buttonClick" text="Change the World!">
-               <graphic>
-                  <Icon content="LANGUAGE" />
-               </graphic>
-            </Button>
+            </GridPane>
          </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
       </VBox>
-   </center>
+   </top>
 </View>

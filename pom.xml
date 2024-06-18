@@ -132,7 +132,7 @@
                     </attachList>
                     <reflectionList>
                         <list>com.admonReq.views.InicioPresenter</list>
-                        <list>com.admonReq.views.OtraVistaPresenter</list>
+                        <list>com.admonReq.views.RegistroReqPresenter</list>
                         <list>com.admonReq.views.SesionPresenter</list>
                     </reflectionList>
                     <mainClass>com.admonReq.sarequi</mainClass>

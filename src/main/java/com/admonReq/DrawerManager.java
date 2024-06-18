@@ -24,13 +24,19 @@ public class DrawerManager {
                 new Avatar(21, new Image(DrawerManager.class.getResourceAsStream("/user.png"))));
         drawer.setHeader(header);
         
-        final Item inicioItem = new ViewItem("Inicio", MaterialDesignIcon.HOME.graphic(), INICIO_VIEW, ViewStackPolicy.SKIP);
-        final Item otravistaItem = new ViewItem("OtraVista", MaterialDesignIcon.DASHBOARD.graphic(), OTRAVISTA_VIEW);
-        final Item item = new Item("Item", MaterialDesignIcon.STAR.graphic());
-        drawer.getItems().addAll(inicioItem, otravistaItem, item);
+        final Item inicioItem = new ViewItem("Dashboard", MaterialDesignIcon.HOME.graphic(), INICIO_VIEW, ViewStackPolicy.SKIP);
+        final Item otravistaItem = new ViewItem("Registrar Requerimiento", MaterialDesignIcon.DASHBOARD.graphic(), REGISTRO_VIEW);
+        final Item consultar = new ViewItem("Consultar Requisitos", MaterialDesignIcon.SEARCH.graphic(), CONSULTA_VIEW);
+        final Item exportar = new Item("Exportar proyecto", MaterialDesignIcon.IMPORT_EXPORT.graphic());
+        final Item importar = new Item("Importar Proyecto", MaterialDesignIcon.ADD.graphic());
+        final Item version = new Item("Versión 1.0.0", MaterialDesignIcon.INFO.graphic());
+
+        drawer.getItems().addAll(inicioItem, otravistaItem, exportar, importar, consultar);
+
+        drawer.setFooter(version);
         
         if (Platform.isDesktop()) {
-            final Item quitItem = new Item("Quit", MaterialDesignIcon.EXIT_TO_APP.graphic());
+            final Item quitItem = new Item("Salir", MaterialDesignIcon.EXIT_TO_APP.graphic());
             quitItem.selectedProperty().addListener((obs, ov, nv) -> {
                 if (nv) {
                     Services.get(LifecycleService.class).ifPresent(LifecycleService::shutdown);

@@ -1,3 +1,27 @@
 .view {
 
 }
+.button.clean{
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+    -fx-font-family: Tahoma;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.button.done{
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-family: Tahoma;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+
+.label{
+    -fx-text-fill: #311d60
+}
+.label.tittle {
+    -fx-font-family: Tahoma;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}

@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.gluonhq.charm.glisten.mvc.View?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
-<View fx:id="otravista" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@otravista.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admonReq.views.OtraVistaPresenter">
+<View fx:id="otravista" maxHeight="-Infinity"  prefHeight="652.0" prefWidth="643.0" maxWidth="-Infinity" stylesheets="@otravista.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admonReq.views.RegistroReqPresenter">
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox maxHeight="1000.0" maxWidth="1000.0" minHeight="100.0" minWidth="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="This is OtraVista!" />
+            <GridPane prefHeight="477.0" prefWidth="1000.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="485.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="0.0" prefWidth="27.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="586.0" minWidth="10.0" prefWidth="488.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="390.0" minHeight="10.0" prefHeight="213.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="390.0" minHeight="-Infinity" prefHeight="213.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="239.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
+                     <children>
+                        <Button layoutX="33.0" layoutY="-1.0" maxHeight="50.0" maxWidth="1.7976931348623157E308" minHeight="30.0" mnemonicParsing="false" text="Button" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
          </children>
       </VBox>
    </center>
